@@ -52,7 +52,7 @@ jobs:
         run: docker build -t ronny-villa-calculadora .
 
       - name: Ejecutar tests dentro del contenedor ronny-villa
-        run: docker run ronny-villa-calculadora
+        run: docker run ronny-villa-calculadora pytest -v
 
       # 🆕 NUEVOS PASOS PARA PUBLICAR EN GITHUB PACKAGES
       - name: Login to GitHub Container Registry

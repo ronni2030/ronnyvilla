@@ -64,10 +64,12 @@ jobs:
 
       - name: Etiquetar imagen para GitHub Container Registry
         run: |
-          docker tag ronny-villa-calculadora ghcr.io/${{ github.repository_owner }}/ronny-villa-calculadora:latest
-          docker tag ronny-villa-calculadora ghcr.io/${{ github.repository_owner }}/ronny-villa-calculadora:${{ github.sha }}
+          REPO_OWNER=$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')
+          docker tag ronny-villa-calculadora ghcr.io/${REPO_OWNER}/ronny-villa-calculadora:latest
+          docker tag ronny-villa-calculadora ghcr.io/${REPO_OWNER}/ronny-villa-calculadora:${{ github.sha }}
 
       - name: Publicar imagen en GitHub Packages
         run: |
-          docker push ghcr.io/${{ github.repository_owner }}/ronny-villa-calculadora:latest
-          docker push ghcr.io/${{ github.repository_owner }}/ronny-villa-calculadora:${{ github.sha }}
+          REPO_OWNER=$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')
+          docker push ghcr.io/${REPO_OWNER}/ronny-villa-calculadora:latest
+          docker push ghcr.io/${REPO_OWNER}/ronny-villa-calculadora:${{ github.sha }}

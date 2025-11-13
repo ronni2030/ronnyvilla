@@ -1,0 +1,25 @@
+version: "3.8"
+services:
+  ronny:
+    image: ronny:latest
+    build: .
+    deploy:
+      replicas: 1
+      labels:
+        - "traefik.enable=true"
+        - "traefik.http.routers.ronny.entrypoints=http"
+        - "traefik.http.routers.ronny.rule=Host(`ronny.byronrm.com`)"
+        - "traefik.http.middlewares.ronny-https-redirect.redirectscheme.scheme=https"
+        - "traefik.http.routers.ronny.middlewares=ronny-https-redirect"
+        - "traefik.http.routers.ronny-secure.entrypoints=https"
+        - "traefik.http.routers.ronny-secure.rule=Host(`ronny.byronrm.com`)"
+        - "traefik.http.routers.ronny-secure.tls=true"
+        - "traefik.http.routers.ronny-secure.tls.certresolver=http"
+        - "traefik.http.routers.ronny-secure.service=ronny"
+        - "traefik.http.services.ronny.loadbalancer.server.port=80"
+        - "traefik.docker.network=traefik-public"
+    networks:
+      - traefik-public
+networks:
+  traefik-public:
+    external: true

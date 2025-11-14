@@ -1,4 +1,4 @@
-name: Python application
+name: despliegue
 
 on: [push, pull_request]
 

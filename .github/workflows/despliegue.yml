@@ -45,7 +45,7 @@ jobs:
       uses: docker/build-push-action@v6
       with:
         push: true
-        tags: ghcr.io/ronnyvilla2030:ronnyvilla
+        tags: ghcr.io/ronnyvilla2030/ronnyvilla:latest
      
     - name: 🧾 Mostrar variables básicas (solo locales, no secretos)
       run: |

@@ -45,7 +45,7 @@ jobs:
       with:
         context: .
         push: true
-        tags: ghcr.io/ronnyvilla2030/ronnyvilla:latest
+        tags: ghcr.io/ronni2030/ronnyvilla:latest
 
     - name: 🧾 Mostrar variables básicas (solo locales, no secretos)
       run: |

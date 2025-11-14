@@ -49,4 +49,4 @@ jobs:
       uses: docker/build-push-action@v6
       with:
         push: true
-        tags: ghcr.io/ronni2030/ronnyvilla:ronnyvilla
+        tags: ghcr.io/ronnyvilla2030:ronnyvilla

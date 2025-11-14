@@ -16,7 +16,7 @@ services:
         - "traefik.http.routers.ronny-secure.tls=true"
         - "traefik.http.routers.ronny-secure.tls.certresolver=http"
         - "traefik.http.routers.ronny-secure.service=ronny"
-        - "traefik.http.services.ronny.loadbalancer.server.port=80"
+        - "traefik.http.services.ronny.loadbalancer.server.port=5000"
         - "traefik.docker.network=traefik-public"
     networks:
       - traefik-public

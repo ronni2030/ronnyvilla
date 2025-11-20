@@ -77,7 +77,7 @@ jobs:
         source: "stack.yml"
         target: "/home/${{ secrets.VPS_USER }}/deploy1"
     - name: despliegue de servicios
-      uses: appleboy/sch-action@v1
+      uses: appleboy/ssh-action@v1
       with:
         host: ${{ secrets.VPS_HOST }}
         username: ${{ secrets.VPS_USER }}

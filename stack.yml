@@ -1,7 +1,7 @@
 version: "3.8"
 services:
   ronny:
-    image: ronny:latest
+    image: ghcr.io/ronni2030/ronny-villa-calculadora:7462be95ef8a95ed36a71db2887500c8ba6dca0d
     build: .
     deploy:
       replicas: 1

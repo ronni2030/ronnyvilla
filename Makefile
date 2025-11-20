@@ -15,7 +15,7 @@ rm:
 
 ps:
 	docker service ls
-
+  
 restart:
 	make rm
 	sleep 5

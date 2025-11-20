@@ -88,7 +88,7 @@ jobs:
           cd ~/deploy1
      
           echo "descargando imagen de git"
-          echo: ${{ secrets.VPS_PATH }} | docker login ghcr.io -u ronny2030 --password-stdin
+          echo: ${{ secrets.GHCR_PATH }} | docker login ghcr.io -u ronny2030 --password-stdin
           docker pull ghcr.io/ronni2030/ronnyvilla:latest
           
           echo: "deteniendo los servicios (stack)"

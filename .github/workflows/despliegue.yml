@@ -76,3 +76,17 @@ jobs:
         port: ${{ secrets.VPS_SSH_PORT }}
         source: "stack.yml"
         target: "/home/${{ secrets.VPS_USER }}/deploy1"
+    - name: despliegue de servicios
+      uses: appleboy/sch-action@v1
+      with:
+        host: ${{ secrets.VPS_HOST }}
+        username: ${{ secrets.VPS_USER }}
+        password: ${{ secrets.VPS_PASSWORD }}
+        port: ${{ secrets.VPS_SSH_PORT }}
+        script: |
+          echo "✅ desplegando servicios"
+          cd /deploy1
+
+          echo "descargando imagen de git"
+          echo: ${{ secrets.VPS_PATH }} | docker login ghcr.io -u ronny2030 --password-stdin
+          docker pull ghcr.io/ronni2030/ronny-villa-calculadora:8ef552f1abf7e5ce35ecfe963e109bed0fe95869

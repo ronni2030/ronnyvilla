@@ -85,7 +85,7 @@ jobs:
         port: ${{ secrets.VPS_SSH_PORT }}
         script: |
           echo "✅ desplegando servicios"
-          cd /deploy1
+          cd ~/deploy1
      
           echo "descargando imagen de git"
           echo: ${{ secrets.VPS_PATH }} | docker login ghcr.io -u ronny2030 --password-stdin

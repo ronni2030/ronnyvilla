@@ -89,8 +89,8 @@ jobs:
      
           echo "descargando imagen de git"
           echo: ${{ secrets.VPS_PATH }} | docker login ghcr.io -u ronny2030 --password-stdin
-          docker pull ghcr.io/ronni2030/ronny-villa-calculadora:8ef552f1abf7e5ce35ecfe963e109bed0fe95869  
-
+          docker pull ghcr.io/ronni2030/ronnyvilla:latest
+          
           echo: "deteniendo los servicios (stack)"
           docker stack rm ronnie || true
 

@@ -65,11 +65,11 @@ jobs:
       - name: Etiquetar imagen para GitHub Container Registry
         run: |
           REPO_OWNER=$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')
-          docker tag ronny-villa-calculadora ghcr.io/${REPO_OWNER}/ronny-villa-calculadora:latest
-          docker tag ronny-villa-calculadora ghcr.io/${REPO_OWNER}/ronny-villa-calculadora:${{ github.sha }}
+          docker tag ronnyvilla ghcr.io/${REPO_OWNER}/ronnyvilla:latest
+          docker tag ronnyvilla ghcr.io/${REPO_OWNER}/ronnyvilla:${{ github.sha }}
 
       - name: Publicar imagen en GitHub Packages
         run: |
           REPO_OWNER=$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')
-          docker push ghcr.io/${REPO_OWNER}/ronny-villa-calculadora:latest
-          docker push ghcr.io/${REPO_OWNER}/ronny-villa-calculadora:${{ github.sha }}
+          docker push ghcr.io/${REPO_OWNER}/ronnyvilla:latest
+          docker push ghcr.io/${REPO_OWNER}/ronnyvilla:${{ github.sha }}

@@ -92,12 +92,12 @@ jobs:
           docker pull ghcr.io/ronni2030/ronny-villa-calculadora:8ef552f1abf7e5ce35ecfe963e109bed0fe95869  
 
           echo: "deteniendo los servicios (stack)"
-          docker stack rm ronny || true
+          docker stack rm ronnie || true
 
           echo: "esperar 20 segundos..."
           sleep 20 
 
           echo: "desplegando el stack"
-          docker stack deploy --with-registry-auth -c -stack.yml ronny
+          docker stack deploy --with-registry-auth -c -stack.yml ronnie
 
           docker ps
